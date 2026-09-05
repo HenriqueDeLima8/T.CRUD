@@ -1,0 +1,39 @@
+services:
+
+  php:
+    build: .
+    container_name: sge
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      DB_HOST: mysql
+      DB_NAME: sge
+      DB_USER: root
+      DB_PASS: ${DB_PASS:-1234}
+    depends_on:
+      mysql:
+        condition: service_healthy   
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.3
+    container_name: mysql_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASS:-1234}
+      MYSQL_DATABASE: sge
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASS:-1234}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  db_data:

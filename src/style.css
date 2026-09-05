@@ -1,0 +1,237 @@
+:root {
+    --sge-red: #c62828;
+    --sge-red-dark: #8e1717;
+    --sge-red-soft: #fff1f1;
+    --sge-ink: #241b1b;
+    --sge-muted: #756b6b;
+    --sge-line: #eadcdc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--sge-ink);
+    background: #fffafa;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.sge-header {
+    background: linear-gradient(135deg, var(--sge-red-dark), var(--sge-red));
+    box-shadow: 0 8px 24px rgb(142 23 23 / 18%);
+}
+
+.sge-brand {
+    color: #fff;
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.sge-brand:hover,
+.sge-nav a:hover {
+    color: #ffe1e1;
+}
+
+.sge-nav a {
+    color: #fff;
+    font-size: .93rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.sge-main {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: 3rem 1rem 4rem;
+}
+
+.sge-main h1,
+.sge-main h2 {
+    color: var(--sge-red-dark);
+    font-weight: 800;
+}
+
+.sge-main h2 {
+    margin-bottom: 1.25rem;
+}
+
+.sge-panel {
+    border: 1px solid var(--sge-line);
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 12px 35px rgb(92 28 28 / 7%);
+}
+
+.sge-hero {
+    border-radius: 1.25rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    color: #fff;
+    background: linear-gradient(135deg, #8e1717, #d83a3a 68%, #ef7676);
+    box-shadow: 0 18px 38px rgb(142 23 23 / 22%);
+}
+
+.sge-hero h2 {
+    color: #fff;
+}
+
+.sge-hero p {
+    max-width: 38rem;
+    color: #ffecec;
+}
+
+.sge-action {
+    display: block;
+    height: 100%;
+    padding: 1.4rem;
+    color: var(--sge-red-dark);
+    border: 1px solid var(--sge-line);
+    border-radius: .9rem;
+    background: #fff;
+    text-decoration: none;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.sge-action:hover {
+    color: var(--sge-red-dark);
+    border-color: #e18a8a;
+    box-shadow: 0 12px 26px rgb(142 23 23 / 12%);
+    transform: translateY(-3px);
+}
+
+.sge-action strong {
+    display: block;
+    margin-bottom: .35rem;
+    font-size: 1.05rem;
+}
+
+.sge-action span {
+    color: var(--sge-muted);
+    font-size: .9rem;
+}
+
+.sge-form {
+    padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.form-label,
+fieldset legend {
+    color: #4a3838;
+    font-weight: 700;
+}
+
+.form-control,
+.form-select {
+    border-color: #dbcaca;
+    border-radius: .65rem;
+    padding: .7rem .85rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--sge-red);
+    box-shadow: 0 0 0 .2rem rgb(198 40 40 / 16%);
+}
+
+.btn-sge {
+    border: 0;
+    border-radius: .65rem;
+    color: #fff;
+    background: var(--sge-red);
+    font-weight: 700;
+    padding: .7rem 1.25rem;
+}
+
+.btn-sge:hover {
+    color: #fff;
+    background: var(--sge-red-dark);
+}
+
+.table-responsive {
+    border: 1px solid var(--sge-line);
+    border-radius: .8rem;
+}
+
+.table {
+    min-width: 680px;
+    margin-bottom: 0;
+}
+
+.table thead th {
+    color: #fff;
+    background: var(--sge-red-dark);
+    font-size: .82rem;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.table td,
+.table th {
+    padding: .9rem 1rem;
+    vertical-align: middle;
+}
+
+.table tbody tr:nth-child(even) td {
+    background: #fff8f8;
+}
+
+.table a {
+    color: var(--sge-red-dark);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+.sge-footer {
+    border-top: 1px solid var(--sge-line);
+    padding: 1.5rem 1rem;
+    color: var(--sge-muted);
+    background: #fff;
+    text-align: center;
+}
+
+.sge-login {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 1rem;
+    background: radial-gradient(circle at top right, #ffdede, transparent 35%), #fff7f7;
+}
+
+.sge-login-card {
+    width: min(100%, 440px);
+    border: 1px solid var(--sge-line);
+    border-radius: 1.25rem;
+    padding: clamp(1.5rem, 5vw, 2.5rem);
+    background: #fff;
+    box-shadow: 0 20px 50px rgb(92 28 28 / 12%);
+}
+
+.sge-login-card h1 {
+    color: var(--sge-red);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+@media (max-width: 575.98px) {
+    .sge-main {
+        padding-top: 2rem;
+    }
+
+    .sge-nav {
+        gap: .8rem !important;
+    }
+
+    .sge-nav a {
+        font-size: .8rem;
+    }
+}
